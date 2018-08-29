@@ -1,4 +1,4 @@
-A small app to add and remove packing items before travel (very much on the line of a to-do app) - great for fundamental understanding of state in react
+A small React app to add and remove packing items before travel (very much on the line of a to-do app) - great for fundamental understanding of state in react
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
