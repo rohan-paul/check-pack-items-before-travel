@@ -1,0 +1,36 @@
+.Item-remove {
+    background-color: white;
+    color: #f65e81;
+    border: none;
+    margin-left: 1em;
+    outline: none;
+    padding: 0
+}
+
+.Item-remove:hover {
+    background-color: white;
+    text-decoration: underline;
+}
+
+/* 
+CSS :hover selector
+
+The CSS :hover selector allows you to target an element that the user hovers over with a cursor or mouse pointer.
+
+Syntax
+The syntax for the :hover CSS selector is:
+
+element:hover { style_properties }
+
+Parameters or Arguments
+
+element
+The element to target when the user hovers over it.
+
+style_properties
+The CSS styles to apply to the element when the user is hovering over it.
+
+Note - The :hover selector is a pseudo-class that allows you to target an element that the cursor or mouse pointer is hovering over.
+
+It is difficult to apply the :hover selector on touch devices.
+ */
