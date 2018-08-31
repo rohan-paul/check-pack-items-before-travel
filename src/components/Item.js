@@ -1,3 +1,5 @@
+import React, { Component } from 'react'
+import './Item.css'
 class Item extends Component {
     render() {
         const { item } = this.props;

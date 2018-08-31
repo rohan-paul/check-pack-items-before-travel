@@ -3,7 +3,7 @@ import './App.css';
 import uniqueId from 'lodash/uniqueId'
 import CountDown from './CountDown';
 import NewItem from './NewItem';
-import Items from './Items';
+import Items from './Item';
 
 const defaultState = [
     {value: 'Pants', id: uniqueId(), packed: false},
