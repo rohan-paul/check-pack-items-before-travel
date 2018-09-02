@@ -5,9 +5,12 @@ import './CountDown.css'
 
 class Countdown extends Component {
 
-    state = {
-        timeLeft: calculateTimeLeft(),
-      };
+    constructor(props) {
+        super(props);
+        this.state = {
+            timeLeft: calculateTimeLeft(),
+          };
+    }
 
     componentDidMount() {
         this.countDownInterval = setInterval(() => {

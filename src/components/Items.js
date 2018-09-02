@@ -3,10 +3,15 @@ import Item from './Item'
 import Filter from './Filter'
 
 class Items extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            // What state does this component have?
+          };
+    }
+
         
-        state = {
-          // What state does this component have?
-        };
 
     updateSearchTerm = searchTerm => {}
 

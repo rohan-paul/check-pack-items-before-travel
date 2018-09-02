@@ -21,9 +21,14 @@ const defaultState = [
   ];
 
   class Application extends Component {
-    state = {
-      // Set the initial state,
-    };
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            // Set the initial state,
+          };
+    }
+    
 
     // How are we going to manipulate the state?
     // Ideally, users are going to want to add, remove,

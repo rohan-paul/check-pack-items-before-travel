@@ -1,7 +1,8 @@
 .NewItem {
     display: flex;
-}
-
-.NewItem-input {
-    width: 100%
-}
+  }
+  
+  .NewItem-input {
+    width: 100%;
+  }
+  

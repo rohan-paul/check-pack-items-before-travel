@@ -4,13 +4,14 @@
     border: none;
     margin-left: 1em;
     outline: none;
-    padding: 0
-}
+    padding: 0;
+  }
 
-.Item-remove:hover {
+  .Item-remove:hover {
     background-color: white;
     text-decoration: underline;
-}
+  }
+
 
 /*
 CSS :hover selector

@@ -5,7 +5,12 @@ import './NewItem.css';
 
 class NewItem extends Component {
 
-    state = { value: '' };
+    constructor(props) {
+        super(props);
+        this.state = { value: '' };
+    }
+
+
 
     // note the arrow function does not need to be binded seperately as its will auto-bind
     // So handleChange() will set the state.value to whatever I type in the input field
@@ -37,7 +42,7 @@ class NewItem extends Component {
                     value={value}
                     onChange={this.handleChange}
                     />
-                <input type="button" className="NewItem-submit button"/>
+                <input type="submit" className="NewItem-submit button"/>
             </form>
         );
     }
