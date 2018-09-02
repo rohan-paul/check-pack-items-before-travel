@@ -17,50 +17,6 @@ export default {
         const newItem = { ...item, id: Dane.now() }
         localForage.setItem('items', [...items, newItem])
         return newItem;
-    },
-
-    // Function to just get all the items using async-await
-    async getAll() {
-        return await getAll()
-    },
-
-    // Function to delete an item with a particular id by only doing localforage.setItem()
-    // for the filtered list which does NOT match that id
-    async delete({ id }) {
-        const items = await getAll();
-        localforage.setItem('items', items.filter(item => item.id !== id ));
-    },
-
-    // Function to update the existing items array with the updatedItem
-    async update(updatedItem) {
-
-        const items = await getAll();
-        localforage.setItem(
-            'items',
-            items.map(item => {
-                if (item.id === updatedItem.id) {
-                    return (...items, updatedItem)
-                }
-                return item;
-            }),
-        )
-    },
-
-    // function mark all the items in the current array as unpacked
-    async markAllAsUnpacked () {
-        const items = await getAll()
-        localforage.setItem(
-            'items',
-            items.map(item => ({...items, packed: false}))
-        )
-    },
-
-    // Function to delete all the unpacked array, by doing localforage.setItem
-    // for all the filtered items where they have the packed value as true
-    async deleteUnpackedItems() {
-        const items = await getAll();
-        localforage.setItem('items',
-        items.filter(({ packed }) => packed ))        
     }
 }
 
