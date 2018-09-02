@@ -26,7 +26,7 @@ class Items extends Component {
                             key={item.id}
                             onCheckOff={() => {}}
                             onRemove={() => {}}
-                            item={}
+                            item={item}
                         />
                     )}
             </section>

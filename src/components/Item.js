@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './Item.css'
+
 class Item extends Component {
     render() {
         const { item } = this.props;
@@ -24,12 +25,13 @@ class Item extends Component {
 
 export default Item;
 
-/* A> The htmlFor property sets or returns the value of the for attribute of a label.
+/* A> The htmlFor property sets or returns the value of the 'for' attribute of a label.
 
 The for attribute specifies which form element a label is bound to.
 
 B> https://reactjs.org/docs/dom-elements.html#htmlfor
-Since for is a reserved word in JavaScript, React elements use htmlFor instead.
+
+Since 'for' is a reserved word in JavaScript, React elements use htmlFor instead. Jus like the case of class and className
 
 C>
 */

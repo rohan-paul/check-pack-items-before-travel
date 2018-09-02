@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import './Application.css';
 import uniqueId from 'lodash/uniqueId'
 import CountDown from './CountDown';
 import NewItem from './NewItem';
@@ -23,7 +23,7 @@ class Application extends Component {
   render() {
     return (
       <div className="App">
-        <Countdown />
+        <CountDown />
         <Items title="Unpacked Item" items={[]} />
         <Items title="Packed Item" items={[]} />
         <button className="button full-width">Mark All as Unpacked</button>
