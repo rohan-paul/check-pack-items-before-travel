@@ -11,7 +11,6 @@ class Items extends Component {
           };
     }
 
-        
 
     updateSearchTerm = searchTerm => {}
 
@@ -45,7 +44,7 @@ class Items extends Component {
 
 export default Items;
 
-/*
+/* 1> This items.js component will render all the 'items' passed as a props from parent Application.js component. And what kind of items will be rendered will be determined by the filter conditionalities in the Application.js
 
 1> VRY IMP - Note the line < const { title, items } = this.props; > Before I use a variable inside the return() function, I have to specifically declare the variable.
 
