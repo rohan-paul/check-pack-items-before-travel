@@ -5,12 +5,7 @@ import './NewItem.css';
 
 class NewItem extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            value: ''
-         };
-    }
+    state = { value: '' };
 
     // note the arrow function does not need to be binded seperately as its will auto-bind
     // So handleChange() will set the state.value to whatever I type in the input field
@@ -52,7 +47,7 @@ export default NewItem;
 
 /* 1> The props handed down to NewItem.js from Application.js were ``onSubmit``.
 
-And here in this child component I will assign the function handleSubmit(event) to this onSubmit prop 
+And here in this child component I will assign the function handleSubmit(event) to this onSubmit prop
 
 2> Note the line < const { value } = this.state; > Before I use a variable inside the return() function, I have to specifically declare the variable.
 
