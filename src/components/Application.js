@@ -28,9 +28,17 @@ const defaultState = [
             items: defaultState
           };
     }
-    // How are we going to manipulate the state?
-    // Ideally, users are going to want to add, remove,
-    // and check off items, right?
+
+    /* 1> Function to add items to the top of the list of items, by typing things. In the input field of the NewItem.js
+    2> this is again, example of passing data from child to parent and changing the state of the parent. passing this addItem CB as a prop ot NewItem child with with onSumbit={ this.addItem } 
+    Then executing this addItem in the child 
+     */
+    addItem = item => {
+        this.setState({
+            items: [item, ...this.state.items]
+        })
+    }
+
 
     render() {
       // Get the items from state
@@ -40,7 +48,7 @@ const defaultState = [
 
       return (
         <div className="Application">
-          <NewItem />
+          <NewItem onSubmit={ this.addItem } />
           <CountDown />
           <Items title="Unpacked Items" items={ unpackedItems } />
           <Items title="Packed Items" items={ packedItems } />

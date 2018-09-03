@@ -28,7 +28,7 @@ class Items extends Component {
             </h2>
             <Filter searchTerm={this.state.searchTerm} onChange={this.updateSearchTerm} />
             {items
-              .filter(item =>                
+              .filter(item =>
                 item.value.toLowerCase().includes(this.state.searchTerm.toLowerCase()),
               )
               .map(item => (
@@ -87,6 +87,8 @@ doing < value = searchTerm >
 
 2> updateSearchTerm() in parent component Items.js - Fundamental explanation why I need it atl - Because I my most fundamental need is to change the searchTerm (the parent state ) to whatever I type. But then, I am updating this searchTerm from the child and passing down 'searchTerm' as a prop from parent to child. And Prop is immutable, so I can not directly change 'searchTerm' in the Filter.js
 So, instead I can give the child a function ( updateSeachTerm() in this file ), that the child can call, and that function can manipulate the state.
+
+SO ITS DATA DOWN ACTIONS UP KIND OF FLOW
 
 
 
