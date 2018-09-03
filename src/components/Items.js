@@ -7,7 +7,7 @@ class Items extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            // What state does this component have?
+            searchTerm: ''
           };
     }
 
@@ -53,7 +53,7 @@ export default Items;
 
 *********************************
 
-The mechanism of the filter functionality  -
+The mechanism and the work-flow of the filter functionality  -
 
 A> The user types something in the <input> field captured by "value" attribute of <input> field.
 
@@ -63,11 +63,14 @@ C> Then this searchTerm is passed upstream from child to parent and passed as th
 
 D) And then in Items.js with setState inside updateSearchTerm() function, this searchTerm will be the new state.
 
-E) And then the updateSearchTerm() function gets invoked in Filter.js inside handleChange() function by the line 
+E) And then the updateSearchTerm() function gets passed ONLY in Filter.js inside handleChange() function by the line 
 < onChange(value) > 
-And handleChange() function gets invoked when user changes the content of the input field with below line
 
-onChange
+But then, I have to execute handleChange() function so the updateSearchTerm() function gets the opportunity to execute as well.
+
+And thats what I do inside the return() statement - handleChange() function gets executed whenever user changes the content of the input field with below line
+
+onChange={this.handleChange}
 
 **************************************
 
