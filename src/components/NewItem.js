@@ -27,6 +27,7 @@ class NewItem extends Component {
 
         onSubmit({value, id: uniqueId, packed: false})
 
+        // After the onSubmit props changes the state in the parent, by adding the newItem to the list of items, my input field need to be cleared by doing the below . Else the item will keep showing up in the input field even after I press on submit button.
         this.setState({
             value : ''
         })

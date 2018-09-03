@@ -1,5 +1,21 @@
 A small React app to add and remove packing items before travel (very much on the line of a to-do app) - great for fundamental understanding of state in react
 
+## Basic flow of Component Hierarchy
+
+```
+Application.js
+│
+└───Items.js
+│   │
+│   └───Item.js
+|   |___Filter.js
+│
+└───CountDown.js
+|___NewItem.js
+
+```
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 ## Available Scripts
