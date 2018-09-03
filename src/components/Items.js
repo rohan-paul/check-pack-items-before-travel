@@ -11,7 +11,7 @@ class Items extends Component {
           };
     }
 
-     updateSearchTerm = searchTerm => {
+    updateSearchTerm = searchTerm => {
         this.setState({
             searchTerm
         })
@@ -26,11 +26,10 @@ class Items extends Component {
             <h2>
               {title} ({items.length})
             </h2>
-            <Filter searchTerm={''} onChange={this.updateSearchTerm} />
+            <Filter searchTerm={this.state.searchTerm} onChange={this.updateSearchTerm} />
             {items
-              .filter(item =>
-                // Hmm… this needs some work.
-                item.value.toLowerCase().includes(''.toLowerCase()),
+              .filter(item =>                
+                item.value.toLowerCase().includes(this.state.searchTerm.toLowerCase()),
               )
               .map(item => (
                 <Item
@@ -63,8 +62,8 @@ C> Then this searchTerm is passed upstream from child to parent and passed as th
 
 D) And then in Items.js with setState inside updateSearchTerm() function, this searchTerm will be the new state.
 
-E) And then the updateSearchTerm() function gets passed ONLY in Filter.js inside handleChange() function by the line 
-< onChange(value) > 
+E) And then the updateSearchTerm() function gets passed ONLY in Filter.js inside handleChange() function by the line
+< onChange(value) >
 
 But then, I have to execute handleChange() function so the updateSearchTerm() function gets the opportunity to execute as well.
 
@@ -86,7 +85,12 @@ And then withing render()
 < const { searchTerm } = this.props; > And then
 doing < value = searchTerm >
 
+2> updateSearchTerm() in parent component Items.js - Fundamental explanation why I need it atl - Because I my most fundamental need is to change the searchTerm (the parent state ) to whatever I type. But then, I am updating this searchTerm from the child and passing down 'searchTerm' as a prop from parent to child. And Prop is immutable, so I can not directly change 'searchTerm' in the Filter.js
+So, instead I can give the child a function ( updateSeachTerm() in this file ), that the child can call, and that function can manipulate the state.
 
+
+
+MORE THEORETICAL POINTS ON <input> and onChange() -
 
 A> The value attribute if input element - specifies the value of an <input> element. The value attribute is used differently for different input types: For "button", "reset", and "submit" - it defines the text on the button. For "text", "password", and "hidden" - it defines the initial (default) value of the input field.
 
