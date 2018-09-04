@@ -1,0 +1,21 @@
+{
+  "name": "understanding-state-jetsetter",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "localforage": "^1.7.2",
+    "lodash": "^4.17.10",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-redux": "^5.0.7",
+    "react-scripts": "1.1.5",
+    "redux-saga": "^0.16.0",
+    "redux-thunk": "^2.3.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}

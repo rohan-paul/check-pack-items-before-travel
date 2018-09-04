@@ -1,5 +1,7 @@
 A small React app to add and remove packing items before travel (very much on the line of a to-do app) - great for fundamental understanding of state in react
 
+<img src="Travel-Item-Packing.jpeg">
+
 ## Basic flow of Component Hierarchy
 
 ```
