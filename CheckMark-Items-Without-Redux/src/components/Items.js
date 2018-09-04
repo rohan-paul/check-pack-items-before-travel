@@ -16,6 +16,8 @@ class Items extends Component {
             searchTerm
         })
     }
+    /* In above, I am using object destructuring syntax. So the single 'searchTerm' is equivalent to doing < searchTerm: searchTerm >  Which effectively means tha I am telling setState 'Hey take the searchTerm argument of updateSearchTerm() function and set them to be the value of the key-value pair of state (which is an object and both the key and the value is called 'searchTerm' ).
+    */
 
     render() {
 
@@ -48,7 +50,7 @@ export default Items;
 
 /* 1> This items.js component will render all the 'items' passed as a props from parent Application.js component. And what kind of items will be rendered will be determined by the filter conditionalities in the Application.js
 
-2> VRY IMP - Note the line < const { title, items } = this.props; > Before I use a variable inside the return() function, I have to specifically declare the variable.
+2> VERY IMP - Note the line < const { title, items } = this.props; > Before I use a variable inside the return() function, I have to specifically declare the variable.
 
 *********************************
 

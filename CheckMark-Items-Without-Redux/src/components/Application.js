@@ -56,6 +56,8 @@ const defaultState = [
     A> First while traversing the items, if (item.id !== itemToToggle.id ) then dont touch the item at all. It at all and just return the same.
     B> The part < packed: !itemToToggle.packed > means, I am flipping or toggling the packed property of this itemToToggle.
     So, if it was packed (i.e. itemToToggle.packed was true) now it will be Unpacked (i.e. itemToToggle.packed will be false) - And vice-versa.
+
+    And I am passing this toggleItem function down 2 levels of children Items.js and Item.js
     */
    toggleItem = itemToToggle => {
 
@@ -64,14 +66,19 @@ const defaultState = [
                 return item;
             } else {
                 // note here return() is returning an object which is the full itemToToggle item object
-                // Because, note each of the items are an object. And the ... spread operator works on the object as well
+                // Because, note each of the items are an object. And the ...spread operator works on the object as well
                 return {...itemToToggle, packed: !itemToToggle.packed }
             }
         });
         this.setState({ items })
    }
 
-
+   markAllAsUnpacked = () => {
+       const items = this.state.items.map(item => {
+           return { ...item, packed: false }
+       });
+       this.setState({ items })
+   }
 
     render() {
       // Get the items from state
@@ -85,7 +92,7 @@ const defaultState = [
           <CountDown />
           <Items title="Unpacked Items" items={ unpackedItems } onRemove={ this.removeItem } onToggle={ this.toggleItem } />
           <Items title="Packed Items" items={ packedItems } onRemove={ this.removeItem } onToggle={ this.toggleItem } />
-          <button className="button full-width">Mark All As Unpacked</button>
+          <button className="button full-width" onClick={this.markAllAsUnpacked} >Mark All As Unpacked</button>
         </div>
       );
     }

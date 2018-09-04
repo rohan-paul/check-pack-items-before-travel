@@ -31,7 +31,7 @@ export default Filter;
 
 /*
 
-A> The value attribute if input element - specifies the value of an <input> element. The value attribute is used differently for different input types: For "button", "reset", and "submit" - it defines the text on the button. For "text", "password", and "hidden" - it defines the initial (default) value of the input field.
+A> The value attribute of input element - specifies the value of an <input> element. The value attribute is used differently for different input types: For "button", "reset", and "submit" - it defines the text on the button. For "text", "password", and "hidden" - it defines the initial (default) value of the input field.
 
 B> onChange() attribute of <input> element - Execute a JavaScript when the user changes the content of an input field:
 
@@ -41,7 +41,7 @@ https://www.w3schools.com/Tags/ev_onchange.asp
 
 So, in this Filter.js inside return() ( in the line < onChange={this.handleChange} > ) the onChange is not the onChange prop passed from the Parent Items.js but its an attribute of < input > element
 
-And the onChange inside handleChange() is the prop passed from Items.js
+However, the onChange inside handleChange() is the prop passed from Items.js
 
 
 **************************
