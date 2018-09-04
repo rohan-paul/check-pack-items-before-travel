@@ -30,9 +30,14 @@ const defaultState = [
     }
 
     /* 1> Function to add items to the top of the list of items, by typing things. In the input field of the NewItem.js
-    2> this is again, example of passing data from child to parent and changing the state of the parent. passing this addItem CB as a prop ot NewItem child with with onSumbit={ this.addItem }
+
+    2> this is again, example of passing data from child to parent and changing the state of the parent. passing this addItem CB as a prop ot NewItem child with with onSubmit={ this.addItem }
     Then executing this addItem in the child inside the return() by doing
     <onSubmit={ this.handleSubmit } >
+
+    3> In NewItem.js, inside handleSubmit, I have this < onSubmit({ value, id: uniqueId, packed: false }); >
+    And note onSubmit is the props with which I am passing addItem, So thats how arguments for a new items is passed to addItem in the child when I type something new in the input field.
+
      */
     addItem = item => {
         this.setState({
@@ -47,6 +52,26 @@ const defaultState = [
         })
     }
 
+    /* Toggling the Item, so after clicking on the check-box it goes from unpacked to packed and vice-versa
+    A> First while traversing the items, if (item.id !== itemToToggle.id ) then dont touch the item at all. It at all and just return the same.
+    B> The part < packed: !itemToToggle.packed > means, I am flipping or toggling the packed property of this itemToToggle.
+    So, if it was packed (i.e. itemToToggle.packed was true) now it will be Unpacked (i.e. itemToToggle.packed will be false) - And vice-versa.
+    */
+   toggleItem = itemToToggle => {
+
+        const items = this.state.items.map(item => {
+            if ( item.id !== itemToToggle.id ) {
+                return item;
+            } else {
+                // note here return() is returning an object which is the full itemToToggle item object
+                // Because, note each of the items are an object. And the ... spread operator works on the object as well
+                return {...itemToToggle, packed: !itemToToggle.packed }
+            }
+        });
+        this.setState({ items })
+   }
+
+
 
     render() {
       // Get the items from state
@@ -58,8 +83,8 @@ const defaultState = [
         <div className="Application">
           <NewItem onSubmit={ this.addItem } />
           <CountDown />
-          <Items title="Unpacked Items" items={ unpackedItems } onRemove={ this.removeItem } />
-          <Items title="Packed Items" items={ packedItems } onRemove={ this.removeItem } />
+          <Items title="Unpacked Items" items={ unpackedItems } onRemove={ this.removeItem } onToggle={ this.toggleItem } />
+          <Items title="Packed Items" items={ packedItems } onRemove={ this.removeItem } onToggle={ this.toggleItem } />
           <button className="button full-width">Mark All As Unpacked</button>
         </div>
       );
