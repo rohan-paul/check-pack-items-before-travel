@@ -18,8 +18,11 @@ Application.js
 ```
 
 ## Branching in this project
+
 ### A. master branch has the working project with simple React i.e. no Redux and not testing
+
 ### B. "redux-with-test" branch has the working project with React and Redux and testing implemented
+
 ### C. "redux-thunk-without-test" branch has the working project with React and Redux-thunk and NO testing
 
 
