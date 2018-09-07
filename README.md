@@ -2,6 +2,8 @@ A small React app to add and remove packing items before travel (very much on th
 
 <img src="Travel-Item-Packing.jpeg">
 
+[<img src="landing-page.png">](https://react-plan-items-before-travel.herokuapp.com/)
+
 ## Basic flow of Component Hierarchy in this project
 
 ```
