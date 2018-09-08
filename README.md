@@ -1,8 +1,8 @@
-A small React app to add and remove packing items before travel (very much on the line of a to-do app) - great for fundamental understanding of state in react
+A small React app to add and remove packing items before travel (very much on the line of a to-do app) - great for fundamental understanding of state in react.
 
-<img src="Travel-Item-Packing.jpeg">
+Deployed in Heroku, just click on the below image.
 
-[<img src="landing-page.png">](https://react-plan-items-before-travel.herokuapp.com/)
+[<img src="Travel-Item-Packing.jpeg">](https://react-plan-items-before-travel.herokuapp.com/)
 
 ## Basic flow of Component Hierarchy in this project
 
@@ -20,8 +20,11 @@ Application.js
 ```
 
 ## Branching in this project
+
 ### A. master branch has the working project with simple React i.e. no Redux and not testing
+
 ### B. "redux-with-test" branch has the working project with React and Redux and testing implemented
+
 ### C. "redux-thunk-without-test" branch has the working project with React and Redux-thunk and NO testing
 
 
